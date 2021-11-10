@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 10.times do |blog|
     Blog.create!(
         title: "My Blog Post #{blog}",
@@ -22,11 +23,11 @@ puts "5 skills created"
 
 9.times do |entry|
     Portfolio.create!(
-        title:  "Portfolio title: #{entry}",
-        subtitle: "My service",
-        body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor condimentum lacinia quis vel eros donec ac. Nisi porta lorem mollis aliquam ut. Diam quis enim lobortis scelerisque fermentum dui faucibus in. Ornare arcu dui vivamus arcu felis. Id semper risus in hendrerit. Proin libero nunc consequat interdum varius sit amet mattis vulputate. Ultrices sagittis orci a scelerisque purus semper eget duis at. Sed elementum tempus egestas sed sed risus pretium quam vulputate. Velit aliquet sagittis id consectetur. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Varius sit amet mattis vulputate enim. Habitant morbi tristique senectus et netus et malesuada fames ac.",
-        main_image: "https://placeholder.com/600x400",
-        thumb_image: "https://placeholder.com/350x200"
+        title: Faker::Movies::PrincessBride.character,
+        subtitle: Faker::Movies::PrincessBride.quote,
+        body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 5),
+        main_image: "https://via.placeholder.com/600x400",
+        thumb_image: "https://via.placeholder.com/350x200"
     )
 end
 puts "#{Portfolio.all.count} entries created"
